@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sorteio-rifa.pages.dev/sitemap.xml
+Sitemap: https://sorteio.clementinopires.com.br/sitemap.xml
