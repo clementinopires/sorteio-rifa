@@ -42,12 +42,28 @@ python -m http.server 8080
 
 Acesse `http://localhost:8080`
 
-## Deploy no Cloudflare Pages
+## Deploy no Cloudflare
 
-1. Conecte este repositório no [Cloudflare Pages](https://pages.cloudflare.com/)
-2. **Build command:** deixe vazio
-3. **Build output directory:** `/` (raiz)
-4. O arquivo `_headers` aplica automaticamente os headers de segurança
+### Opção A — Cloudflare Pages (recomendado para site estático)
+
+1. Acesse **Workers & Pages → Pages → Create**
+2. Conecte o repositório `clementinopires/sorteio-rifa`
+3. **Build command:** deixe vazio
+4. **Build output directory:** `/`
+5. **Comando de implantação:** deixe vazio (não use `wrangler deploy`)
+6. Deploy
+
+O arquivo `_headers` aplica os headers de segurança automaticamente.
+
+### Opção B — Workers com Wrangler (tela que você está usando)
+
+| Campo | Valor |
+|-------|-------|
+| Nome do projeto | `sorteio-rifa` |
+| Comando da build | *(vazio)* |
+| Comando de implantação | `npx wrangler deploy` |
+
+O repositório já inclui `wrangler.jsonc` e `package.json` para esse fluxo.
 
 ### Arquivos publicados
 

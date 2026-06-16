@@ -7,3 +7,5 @@ dados/
 generate_template.py
 __pycache__/
 .DS_Store
+node_modules/
+.wrangler/
