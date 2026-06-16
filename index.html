@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorteio de Rifa Online Grátis | Sorteador de Rifa por Planilha Excel</title>
+  <meta name="description" content="Ferramenta gratuita para sorteio de rifa online. Importe sua planilha Excel ou CSV, visualize os números vendidos e realize sorteios transparentes com animação. Dados processados apenas no seu navegador.">
+  <meta name="keywords" content="sorteio de rifa, sorteador de rifa, rifa online, sorteio online grátis, sorteio por planilha, rifa excel, sorteador de números, rifa beneficente">
+  <meta name="author" content="Sorteio de Rifa">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sorteio-rifa.pages.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Sorteio de Rifa Online Grátis | Sorteador por Planilha">
+  <meta property="og:description" content="Sorteie sua rifa de forma rápida e transparente. Basta importar a planilha Excel ou CSV com os números e compradores.">
+  <meta property="og:url" content="https://sorteio-rifa.pages.dev/">
+  <meta property="og:site_name" content="Sorteio de Rifa">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sorteio de Rifa Online Grátis">
+  <meta name="twitter:description" content="Sorteador de rifa por planilha Excel e CSV. Grátis, simples e com privacidade.">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Sorteio de Rifa",
+    "description": "Ferramenta gratuita para realizar sorteios de rifa importando planilhas Excel ou CSV. Processamento local no navegador, sem envio de dados a servidores.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BRL"
+    },
+    "inLanguage": "pt-BR",
+    "featureList": [
+      "Importação de planilha Excel e CSV",
+      "Sorteio com animação",
+      "Mascaramento de telefone",
+      "Processamento 100% no navegador"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O sorteio de rifa é gratuito?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. A ferramenta é 100% gratuita e funciona direto no navegador, sem necessidade de cadastro."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Meus dados da planilha são enviados para algum servidor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. A planilha é processada apenas no seu dispositivo. Nenhum dado pessoal é transmitido a servidores."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais formatos de planilha o sorteador aceita?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O sorteador aceita arquivos Excel (.xlsx, .xls) e CSV. Há um modelo disponível para download na página."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-pattern"></div>
+
+  <main class="container">
+    <header class="header">
+      <div class="logo" aria-hidden="true">🎟️</div>
+      <h1>Sorteio de Rifa Online</h1>
+      <p class="subtitle">Importe sua planilha Excel ou CSV e realize o sorteio com transparência</p>
+    </header>
+
+    <section class="privacy-notice" id="privacyNotice">
+      <h2 class="privacy-title">Aviso de Privacidade</h2>
+      <ul class="privacy-list">
+        <li>Este site processa a planilha <strong>apenas no seu navegador</strong>. Nenhum dado é enviado a servidores.</li>
+        <li>A planilha pode conter <strong>dados pessoais</strong> (nome e telefone dos compradores).</li>
+        <li>Use o site em ambiente confiável e evite compartilhar a tela com dados sensíveis expostos.</li>
+        <li>Telefones são exibidos parcialmente mascarados; nomes permanecem visíveis na listagem.</li>
+        <li>Ao fechar o navegador, os dados carregados são descartados da memória.</li>
+      </ul>
+      <label class="privacy-consent">
+        <input type="checkbox" id="privacyCheckbox">
+        <span>Li e compreendi o aviso de privacidade</span>
+      </label>
+    </section>
+
+    <section class="upload-section" id="uploadSection">
+      <label class="upload-area upload-area--disabled" id="uploadArea" for="fileInput">
+        <input type="file" id="fileInput" accept=".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv" hidden disabled>
+        <div class="upload-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+        </div>
+        <span class="upload-title" id="uploadTitle">Aceite o aviso de privacidade para continuar</span>
+        <span class="upload-hint">ou clique para selecionar</span>
+        <span class="upload-formats">Aceita .xlsx, .xls e .csv — máximo 5 MB</span>
+      </label>
+
+      <div class="template-download">
+        <p class="template-text">Não tem planilha? Baixe o modelo e preencha no formato correto:</p>
+        <a class="btn btn-template" href="modelo-rifa.xlsx" download="modelo-rifa.xlsx">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Baixar modelo Excel
+        </a>
+      </div>
+    </section>
+
+    <section class="data-section hidden" id="dataSection">
+      <div class="stats-bar">
+        <div class="stat">
+          <span class="stat-value" id="totalNumbers">0</span>
+          <span class="stat-label">Números</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="soldNumbers">0</span>
+          <span class="stat-label">Vendidos</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="availableNumbers">0</span>
+          <span class="stat-label">Disponíveis</span>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="data-table" id="dataTable">
+          <thead>
+            <tr>
+              <th>Nº</th>
+              <th>Comprador</th>
+              <th>Nº para Contato</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-secondary" id="btnNewFile">Trocar arquivo</button>
+        <button class="btn btn-primary" id="btnSortear">
+          <span class="btn-text">Sortear</span>
+          <span class="btn-icon">🎲</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="draw-section hidden" id="drawSection">
+      <div class="draw-animation" id="drawAnimation">
+        <div class="slot-machine">
+          <div class="slot-window">
+            <div class="slot-number" id="slotNumber">?</div>
+          </div>
+          <div class="slot-label">Sorteando...</div>
+        </div>
+        <div class="confetti-container" id="confettiContainer"></div>
+      </div>
+
+      <div class="winner-card hidden" id="winnerCard">
+        <button type="button" class="winner-close" id="btnCloseWinner" aria-label="Fechar e voltar ao início">&times;</button>
+        <div class="winner-badge">🏆 Ganhador</div>
+        <div class="winner-number" id="winnerNumber" aria-live="polite"></div>
+        <div class="winner-details">
+          <div class="winner-field">
+            <span class="field-label">Comprador</span>
+            <span class="field-value" id="winnerBuyer"></span>
+          </div>
+          <div class="winner-field">
+            <span class="field-label">Nº para Contato</span>
+            <span class="field-value" id="winnerContact"></span>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="btnSortearAgain">Sortear novamente</button>
+      </div>
+    </section>
+
+    <section class="seo-content" id="seoContent" aria-label="Informações sobre o sorteador de rifa">
+      <h2>Como funciona o sorteador de rifa?</h2>
+      <p>
+        Esta ferramenta permite realizar <strong>sorteio de rifa online</strong> de forma simples e gratuita.
+        Basta fazer o upload da sua planilha com os números, nomes dos compradores e telefones de contato.
+        O sistema lê o arquivo Excel (.xlsx, .xls) ou CSV, lista todos os participantes e realiza o sorteio com animação.
+      </p>
+
+      <h2>Para quem é este sorteador?</h2>
+      <ul>
+        <li>Rifas beneficentes e vaquinhas entre amigos</li>
+        <li>Sorteios em eventos, igrejas e associações</li>
+        <li>Organizadores que usam planilha para controlar números vendidos</li>
+        <li>Quem precisa de um <strong>sorteador de rifa por planilha</strong> sem instalar programas</li>
+      </ul>
+
+      <h2>Perguntas frequentes</h2>
+      <details class="faq-item">
+        <summary>O sorteio é realmente gratuito?</summary>
+        <p>Sim. A ferramenta é 100% gratuita e funciona direto no navegador.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Meus dados são enviados para algum servidor?</summary>
+        <p>Não. A planilha é processada apenas no seu dispositivo. Nenhum dado pessoal é transmitido.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quais formatos de planilha são aceitos?</summary>
+        <p>Aceitamos arquivos Excel (.xlsx, .xls) e CSV. Baixe o modelo disponível na página para preencher corretamente.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como garantir um sorteio justo?</summary>
+        <p>O sorteio utiliza gerador de números aleatórios criptográfico do navegador, garantindo imparcialidade na escolha do ganhador.</p>
+      </details>
+    </section>
+  </main>
+
+  <div class="toast hidden" id="toast" role="alert"></div>
+
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

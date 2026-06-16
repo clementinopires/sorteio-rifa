@@ -1,0 +1,9 @@
+# Planilhas com dados reais — nunca publicar
+Rifa*.xlsx
+*-privado.xlsx
+dados/
+
+# Desenvolvimento
+generate_template.py
+__pycache__/
+.DS_Store
